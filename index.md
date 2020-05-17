@@ -1,37 +1,40 @@
-## Welcome to GitHub Pages
 
-You can use the [editor on GitHub](https://github.com/thanhxuanhd/thanhxuanhd.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+##### My name is Xuan Nguyen Thanh
+##### Position: Software Engineer - 4 years’ experience
+##### Location: Ha Noi - Viet Nam
+##### Old: 28 ages
+##### Email: thanhxuanhd007@gmail.com
+##### Linkedin: [link](https://www.linkedin.com/in/thanhxuanhd)
 
-### Markdown
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+#### Personal Statement
 
-```markdown
-Syntax highlighted code block
+1. Over 3 years’ experience in software development as Developer using ASP.NET Webform, ASP.NET Core MVC, ASP.NET Core Web API, WCF Service(Windows Communication Foundation)
 
-# Header 1
-## Header 2
-### Header 3
+2. Knowledge about .Net technology, including: ASP.Net MVC5, ASP.NET Core using Entity
+framework code first
 
-- Bulleted
-- List
+3. Knowledge about Html, Javascript, CSS, AngularJS, Angular 2, Angular 4 build single page application
 
-1. Numbered
-2. List
+#### Education and Qualifications:
+- 2011 - 2016: **Viet Nam National University of Agriculture(VNUA) Information Technology – GPA 2.59** 
 
-**Bold** and _Italic_ and `Code` text
+#### Technical Skills
 
-[Link](url) and ![Image](src)
-```
+Skills                  |                        |
+---------------------   | ---------------------
+OS                      | Windows Server 2012/2014/2016/2019 
+Languages               | C#, Typescript, HTML, CSS, Javascript 
+Databases               | MS Access, MySQL, Microsoft SQL Server 2005/2008/2012/2014/2016 
+Packages and Frameworks | ASP.NET, ASP.NET Core, Blazor, Angular JS, Angular 2 – 4 – 6 – 8 - 9, DevExtreme 
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+#### Experience
 
-### Jekyll Themes
+| Position | Company | Time |
+------------- | ------------- | -------------
+Junior Developer | Kloon | 08/2016 - 01/2018 
+Software Engineer | NashTech Limited | 01/2016 - 01/2020
+Senior Software Engineer|  NashTech Limited | 01/2020 - Present
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/thanhxuanhd/thanhxuanhd.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+#### Project

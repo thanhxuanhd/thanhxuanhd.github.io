@@ -1,0 +1,26 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@import "variables";
+@import "bootstrap/bootstrap";
+@import "syntax-highlighting";
+@import "bootstrap-4-jekyll/bootstrap-4-jekyll";
+@import "bootstrap_customization";
+
+.card {
+    border-radius: 0;
+}
+
+table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #fff;
+    border-bottom: 2px solid #444;
+    th,
+    td {
+        padding: 0.75rem;
+        vertical-align: top;
+        border-top: 1px solid #444;
+    }
+}
