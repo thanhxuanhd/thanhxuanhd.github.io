@@ -38,3 +38,15 @@ Software Engineer | NashTech Limited | 01/2016 - 01/2020
 Senior Software Engineer|  NashTech Limited | 01/2020 - Present
 
 #### Project
+
+ Project Name | Duration | Position | Project Description | My Responsibility| Technology
+------------- |  ------------- | ------------- | ------------- | ------------- | -------------
+**Cashfac** | 01/2018 – Now | Software Engineer | Web application for Virtual Bank Account | Implement new feature, investigate and fix issue if application have | Webform , ASP.NET MVC5, Web service, WCF <br> SQL Server Procedure |
+**QLDS** | 09/2018 – 12/2018 | Font-end Developer | Build single page application using Angular 4 | Implement single page application from design prototype and service (Web API). | Typescript and Angular 4 (Angular CLI) <br> Boostrap 4 <br> Web API using Spring framework <br> Oracle Database |
+**ACSMeeting**| 08/2016 – 01/2018 | Junior Developer | Build single page application using ASP.NET CORE MVC, AngularJS binding data and call service Web API.| Design and implement (service, web application new feature from requirement of customer. <br> Write unit test for service implement and deploy version test | ASP.NET CORE <br> AngularJS <br> MS SQL Server 2014 <br>Boostrap 3, Devextreme
+**eNotary** | 09/2015 – 12/2015 | Internship Developer | Build eNotary portal: Web application using DNN CMS (Dotnetnuke) <br> Mobile app (Android, IOS, Windows phone) with restful api(ASP.NET Web Api) | Design and implement an application for Windows Phone. Deploy Web App, Web api, Moble app |Android SDK, IOS SDK, Windows Phone 8.1 SDK <br> ASP.NET Web API /MS SQL Server 2012
+
+#### Repository
+ * [BlogSimpleAPI](https://github.com/thanhxuanhd/BlogSimpleAPI)
+ * [BlogSimpleAdmin](https://github.com/thanhxuanhd/BlogSimpleAdmin)
+ 
