@@ -7,6 +7,7 @@
 @import "syntax-highlighting";
 @import "bootstrap-4-jekyll/bootstrap-4-jekyll";
 @import "bootstrap_customization";
+@import "open-iconic-bootstrap";
 
 .card {
     border-radius: 0;
@@ -23,4 +24,8 @@ table {
         vertical-align: top;
         border-top: 1px solid #444;
     }
+}
+
+.contact-info{
+ font-size: 1.4em;
 }

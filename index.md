@@ -3,10 +3,6 @@
 ##### My name is Xuan Nguyen Thanh
 ##### Position: Software Engineer - 4 years’ experience
 ##### Location: Ha Noi - Viet Nam
-##### Old: 28 ages
-##### Email: thanhxuanhd007@gmail.com
-##### Linkedin: [link](https://www.linkedin.com/in/thanhxuanhd)
-
 
 #### Personal Statement
 
