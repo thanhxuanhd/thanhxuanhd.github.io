@@ -15,6 +15,6 @@ source "https://rubygems.org"
 # uncomment the line below. To upgrade, run `bundle update github-pages`.
 gem "github-pages", "~> 204", group: :jekyll_plugins
 gem 'nokogiri'
-gem 'rack', '~> 2.0.1'
+gem 'rack', '~>= 2.1.4'
 gem 'rspec'
 
