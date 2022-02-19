@@ -1,0 +1,15 @@
+.stepper-vertical .stepper-step:not(:last-child):after {
+  position: absolute;
+  left: 1.2rem;
+  height: calc(100% - 1.2rem);
+  top: 1.6rem;
+  width: 2px;
+  margin-top: 0rem;
+  content: "";
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.stepper-vertical .stepper-step {
+  height: -moz-fit-content;
+  height: fit-content;
+  position: relative;
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "order": 1,
+    "companyName": "Nashtech",
+    "workTimes": "2021 - Present",
+    "role": "Senior Software Engineer"
+  },
+  {
+    "order": 2,
+    "companyName": "Nashtech",
+    "workTimes": "2018 - 2020",
+    "role": "Software Engineer"
+  },
+  {
+    "order": 3,
+    "companyName": "Kloon",
+    "workTimes": "2016 - 2018",
+    "role": "Junior Developer"
+  },
+  {
+    "order": 4,
+    "companyName": "Viking",
+    "workTimes": "2015 - 2016",
+    "role": "Intern"
+  }
+]
