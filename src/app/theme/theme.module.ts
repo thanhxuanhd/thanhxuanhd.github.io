@@ -3,11 +3,16 @@ import { CommonModule } from '@angular/common';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { RouterModule } from '@angular/router';
+import { ThemeService } from './services/theme.service';
 
 const COMPONENTS = [
   FooterComponent,
   HeaderComponent
 ]
+
+const SERVICES = [
+  ThemeService
+];
 
 @NgModule({
   declarations: [
@@ -16,6 +21,9 @@ const COMPONENTS = [
   imports: [
     CommonModule,
     RouterModule
+  ],
+  providers: [
+    ...SERVICES
   ],
   exports: [
     ...COMPONENTS

@@ -1,25 +1,24 @@
-<app-header></app-header>
 <div class="flex w-full justify-center">
-  <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+  <div class="">
     <div class="py-2 sm:px-6 lg:px-8">
       <div class="overflow-hidden shadow-md">
         <table class="table-auto">
-          <thead class="border border-gray-200">
+          <thead class="border">
             <tr>
               <th scope="col"
-                class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase">
+                class="py-3 px-6 text-xs font-medium tracking-wider text-left uppercase">
                 Time
               </th>
               <th scope="col"
-                class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase ">
+                class="py-3 px-6 text-xs font-medium tracking-wider text-left uppercase ">
                 Company
               </th>
               <th scope="col"
-                class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase">
+                class="py-3 px-6 text-xs font-medium tracking-wider text-left uppercase">
                 Role
               </th>
               <th scope="col"
-                class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase">
+                class="py-3 px-6 text-xs font-medium tracking-wider text-left uppercase">
                 Responsibility
               </th>
             </tr>
@@ -27,16 +26,16 @@
           <tbody>
             <tr class="border border-gray-200"
               *ngFor="let workExperience of workExperiences; let i=index">
-              <td class="py-4 px-6 text-sm font-medium text-gray-900">
+              <td class="py-4 px-6 text-sm font-medium">
                 {{workExperience.workTimes}}
               </td>
-              <td class="py-4 px-6 text-sm text-gray-900">
+              <td class="py-4 px-6 text-sm">
                 {{workExperience.companyName}}
               </td>
-              <td class="py-4 px-6 text-sm text-gray-900">
+              <td class="py-4 px-6 text-sm">
                 {{workExperience.role}}
               </td>
-              <td class="py-4 px-6 text-sm text-gray-900" [innerHtml]="workExperience.myResponsibility">
+              <td class="py-4 px-6 text-sm" [innerHtml]="workExperience.myResponsibility">
               </td>
             </tr>
           </tbody>
@@ -45,4 +44,3 @@
     </div>
   </div>
 </div>
-<app-footer></app-footer>

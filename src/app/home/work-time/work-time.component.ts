@@ -21,14 +21,14 @@ export class WorkTimeComponent implements OnInit {
   };
 
   constructor(private workTimeService: WorkTimeService,
-    private skillServie: SkillsService) { }
+    private skillService: SkillsService) { }
 
   ngOnInit(): void {
     if (this.works && this.works.length === 0) {
       this.works = this.workTimeService.getWorkTimes();
     }
     if (this.skills && this.skills?.BackEnd.length === 0) {
-      this.skills = this.skillServie.getSkills();
+      this.skills = this.skillService.getSkills();
     }
   }
 

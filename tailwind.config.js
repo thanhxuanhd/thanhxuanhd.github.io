@@ -5,6 +5,7 @@ const forms = '@tailwindcss/forms';
 module.exports = {
   content: ["./src/**/*.{html,ts,js}"],
   theme: {
+    darkMode: 'class',
     colors: {
       ...colors,
     },
