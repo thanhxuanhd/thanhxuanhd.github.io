@@ -4,11 +4,20 @@
       <div class="flex justify-start lg:w-0 lg:flex-1">
         <a href="#">
           <span class="sr-only">Workflow</span>
-          <svg width="30" height="30" viewBox="0 0 45 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <span *ngIf="isDarkTheme">
+             <svg width="30" height="30" viewBox="0 0 45 42" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M14.8919 23L3 1H17.8936L24.7021 14L3 41H17.8936L24.7021 30.6L30.234 41H43L32.4595 23L42.1489 1H28.6757"
-              stroke="#4F46E5" stroke-width="2" />
+              stroke="#fff" stroke-width="2" />
           </svg>
+          </span>
+         <span *ngIf="!isDarkTheme">
+            <svg width="30" height="30" viewBox="0 0 45 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M14.8919 23L3 1H17.8936L24.7021 14L3 41H17.8936L24.7021 30.6L30.234 41H43L32.4595 23L42.1489 1H28.6757"
+              stroke="#000" stroke-width="2" />
+          </svg>
+         </span>
         </a>
       </div>
       <div class="-mr-2 -my-2 md:hidden">
