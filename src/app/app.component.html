@@ -1,5 +1,24 @@
-<div class="container min-w-full">
+<div class="h-screen flex flex-col">
   <app-header></app-header>
-  <router-outlet></router-outlet>
-  <app-footer class="fixed bottom-0 w-full m-auto"></app-footer>
+  <main class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-2 md:gap-5 flex-grow w-4/5 mx-auto h-fit">
+    <div class="col-span-1 p-4">
+      <div class="md:p-3 sm:p-3 lg:p-3 xl:p-3 sm:order-2 md:order-1 lg:order-1 order-2">
+        <div class="m-2 sm:text-3xl md:text-3xl lg:text-3xl text-2xl">Hi, I am Xuan Nguyen Thanh</div>
+        <div class="m-2 sm:text-xl md:text-xl lg:text-xl text-xl">Senior Software Engineer <span
+            class="md:text-2xl sm:text-xl">-
+            {{year}} year olds</span></div>
+        <div class="m-2 sm:text-2xl md:text-2xl lg:text-2xl text-xl">Based in Ha Noi, Viet Nam</div>
+      </div>
+      <div class="img-avatar text-right md:p-3 sm:p-3 lg:p-3 xl:p-3 sm:order-1 md:order-2 lg:order-2 order-1">
+        <div class="flex justify-center m-auto">
+          <img src="./assets/images/avatar-image.png" alt="avatar-image" class="w-1/2 sm:w-2/3 md:w-2/5 lg:w-2/5">
+        </div>
+      </div>
+    </div>
+
+    <div class="col-span-2 p-6 border-gray-100 sm:border-none md:border lg:border scroll-auto h-fit">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+  <app-footer></app-footer>
 </div>

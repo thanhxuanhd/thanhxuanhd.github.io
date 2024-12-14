@@ -6,13 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-
-  year: number;
-  constructor() {
-    this.year = new Date().getFullYear() - 1993;
-  }
-
   ngOnInit(): void {
   }
-
 }

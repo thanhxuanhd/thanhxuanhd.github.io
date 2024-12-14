@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { WorkExperiencesComponent } from './work-experiences.component';
 
 const routes: Routes = [
-  { path: '', component: WorkExperiencesComponent }
+  { path: '', component: WorkExperiencesComponent, title: 'Experience'}
 ];
 
 @NgModule({
