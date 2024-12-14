@@ -5,9 +5,10 @@ import {
 } from '../core'
 
 @Component({
-  selector: 'app-work-experiences',
-  templateUrl: './work-experiences.component.html',
-  styleUrls: ['./work-experiences.component.scss']
+    selector: 'app-work-experiences',
+    templateUrl: './work-experiences.component.html',
+    styleUrls: ['./work-experiences.component.scss'],
+    standalone: false
 })
 export class WorkExperiencesComponent implements OnInit {
 

@@ -7,9 +7,10 @@ import {
 } from 'src/app/core';
 
 @Component({
-  selector: 'app-work-time',
-  templateUrl: './work-time.component.html',
-  styleUrls: ['./work-time.component.scss']
+    selector: 'app-work-time',
+    templateUrl: './work-time.component.html',
+    styleUrls: ['./work-time.component.scss'],
+    standalone: false
 })
 export class WorkTimeComponent implements OnInit {
 
