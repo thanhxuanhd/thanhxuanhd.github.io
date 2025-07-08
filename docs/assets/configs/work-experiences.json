@@ -28,6 +28,7 @@
     "companyName": "KLOON",
     "workTimes": "07/2016 – 01/2018",
     "role": "Junior Developer",
-    "myResponsibility": "Designed and implemented REST API based on requirements defined in PBI using ASP.NET CORE and Entity Framework Core to connect with database MS SQL Server.<br> Write unit tests to clarify business logic using xunit. <br/> Build feature single application using AngularJS, Bootstraps 3 and DevExtreme.<br/>Provided build and support deployment to testers.<br/> Learn Angular Framework and try to build clear architecture for some small project. <br/>Manage repository source code by Team Foundation Server (TFS) – Azure Devops."
+    "myResponsibility": "Designed and implemented REST API based on requirements defined in PBI using ASP.NET CORE and Entity Framework Core to connect with database MS SQL Server.<br> Write unit tests to clarify business logic using xunit. <br/> Build feature single application using AngularJS, Bootstraps 3 and DevExtreme.<br/>Provided build and support deployment to testers.<br/> Learn Angular Framework and try to build clear architecture for some small project. <br/>Manage repository source code by Team Foundation Server (TFS) – Azure Devops.",
+    "technology": ""
   }
 ]

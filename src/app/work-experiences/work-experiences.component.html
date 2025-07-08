@@ -24,20 +24,22 @@
             </tr>
           </thead>
           <tbody>
-            <tr class="border border-gray-200"
-              *ngFor="let workExperience of workExperiences; let i=index">
-              <td class="py-4 px-6 text-sm font-medium">
-                {{workExperience.workTimes}}
-              </td>
-              <td class="py-4 px-6 text-sm">
-                {{workExperience.companyName}}
-              </td>
-              <td class="py-4 px-6 text-sm">
-                {{workExperience.role}}
-              </td>
-              <td class="py-4 px-6 text-sm" [innerHtml]="workExperience.myResponsibility">
-              </td>
-            </tr>
+            @for (workExperience of workExperiences; track workExperience; let i = $index) {
+              <tr class="border border-gray-200"
+                >
+                <td class="py-4 px-6 text-sm font-medium">
+                  {{workExperience.workTimes}}
+                </td>
+                <td class="py-4 px-6 text-sm">
+                  {{workExperience.companyName}}
+                </td>
+                <td class="py-4 px-6 text-sm">
+                  {{workExperience.role}}
+                </td>
+                <td class="py-4 px-6 text-sm" [innerHtml]="workExperience.myResponsibility">
+                </td>
+              </tr>
+            }
           </tbody>
         </table>
       </div>

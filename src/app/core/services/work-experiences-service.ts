@@ -8,7 +8,6 @@ import workExperiences from 'src/assets/configs/work-experiences.json';
 export class WorkExperiencesService {
   private workExperiences: Array<IWorkExperience> = [];
 
-
   getWorkExperiences(): Array<IWorkExperience> {
 
     if (this.workExperiences && this.workExperiences.length === 0) {

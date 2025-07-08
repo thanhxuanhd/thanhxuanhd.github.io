@@ -4,34 +4,40 @@
       Work Experiences
     </div>
     <ul class="stepper stepper-vertical" data-mdb-stepper="stepper" data-mdb-stepper-type="vertical">
-      <li class="stepper-step stepper-active" *ngFor="let work of works; first as isFirst">
-        <div class="stepper-head flex">
-          <span
-            class="flex stepper-head-icon w-10 rounded-full font-bold text-gray-700 text-sm justify-center items-center mr-3">
-            <svg *ngIf="isFirst" width="25" height="25" viewBox="0 0 24 24" fill="none"
-              xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C21.9939 17.5203 17.5203 21.9939 12 22ZM11.984 20H12C16.4167 19.9956 19.9942 16.4127 19.992 11.996C19.9898 7.57929 16.4087 4 11.992 4C7.57528 4 3.99421 7.57929 3.992 11.996C3.98979 16.4127 7.56729 19.9956 11.984 20ZM10 17L6 13L7.41 11.59L10 14.17L16.59 7.58L18 9L10 17Z"
-                fill="#2E3A59" />
-            </svg>
-            <svg *ngIf="!isFirst" width="30" height="30" viewBox="0 0 24 24" fill="none"
-              xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M12 19C8.13401 19 5 15.866 5 12C5 8.13401 8.13401 5 12 5C15.866 5 19 8.13401 19 12C18.9956 15.8642 15.8642 18.9956 12 19ZM12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7Z"
-                fill="#2E3A59" />
-            </svg>
-          </span>
-          <span class="mt-1 text-base">{{work.workTimes}}</span>
-        </div>
-        <div class="stepper-content ml-14 md:h-16 lg:h-16 xl:h-16">
-          <p class="font-bold text-base">
-            {{work.companyName}}
-          </p>
-          <p class="text-base">
-            {{work.role}}
-          </p>
-        </div>
-      </li>
+      @for (work of works; track work; let isFirst = $first) {
+        <li class="stepper-step stepper-active">
+          <div class="stepper-head flex">
+            <span
+              class="flex stepper-head-icon w-10 rounded-full font-bold text-gray-700 text-sm justify-center items-center mr-3">
+              @if (isFirst) {
+                <svg width="25" height="25" viewBox="0 0 24 24" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C21.9939 17.5203 17.5203 21.9939 12 22ZM11.984 20H12C16.4167 19.9956 19.9942 16.4127 19.992 11.996C19.9898 7.57929 16.4087 4 11.992 4C7.57528 4 3.99421 7.57929 3.992 11.996C3.98979 16.4127 7.56729 19.9956 11.984 20ZM10 17L6 13L7.41 11.59L10 14.17L16.59 7.58L18 9L10 17Z"
+                    fill="#2E3A59" />
+                </svg>
+              }
+              @if (!isFirst) {
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M12 19C8.13401 19 5 15.866 5 12C5 8.13401 8.13401 5 12 5C15.866 5 19 8.13401 19 12C18.9956 15.8642 15.8642 18.9956 12 19ZM12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7Z"
+                    fill="#2E3A59" />
+                </svg>
+              }
+            </span>
+            <span class="mt-1 text-base">{{work.workTimes}}</span>
+          </div>
+          <div class="stepper-content ml-14 md:h-16 lg:h-16 xl:h-16">
+            <p class="font-bold text-base">
+              {{work.companyName}}
+            </p>
+            <p class="text-base">
+              {{work.role}}
+            </p>
+          </div>
+        </li>
+      }
     </ul>
   </div>
   <div class="container order-2 rounded-md sm:p-6 md:p-6 lg:p-6 xl:p-6">
@@ -44,26 +50,38 @@
     <div class="text-lg">
       BackEnd
     </div>
-    <div *ngIf="skills && skills.BackEnd && skills.BackEnd.length > 0">
-      <ul class="md:inline-flex lg:inline-flex xl:inline-flex">
-        <li class="p-2 font-bold" *ngFor="let backEnd of skills.BackEnd;">{{backEnd}}</li>
-      </ul>
-    </div>
+    @if (skills && skills.BackEnd && skills.BackEnd.length > 0) {
+      <div>
+        <ul class="md:inline-flex lg:inline-flex xl:inline-flex">
+          @for (backEnd of skills.BackEnd; track backEnd) {
+            <li class="p-2 font-bold">{{backEnd}}</li>
+          }
+        </ul>
+      </div>
+    }
     <div class="text-xl">
       Database
     </div>
-    <div *ngIf="skills && skills.Database && skills.Database.length > 0">
-      <ul class="md:inline-flex lg:inline-flex xl:inline-flex">
-        <li class="p-2 font-bold" *ngFor="let database of skills.Database">{{database}}</li>
-      </ul>
-    </div>
+    @if (skills && skills.Database && skills.Database.length > 0) {
+      <div>
+        <ul class="md:inline-flex lg:inline-flex xl:inline-flex">
+          @for (database of skills.Database; track database) {
+            <li class="p-2 font-bold">{{database}}</li>
+          }
+        </ul>
+      </div>
+    }
     <div class="text-xl">
       Front End
     </div>
-    <div *ngIf="skills && skills.FrontEnd && skills.FrontEnd.length > 0">
-      <ul class="lg:inline-flex xl:inline-flex grid-flow-row">
-        <li class="p-2 font-bold" *ngFor="let frontEnd of skills.FrontEnd">{{frontEnd}}</li>
-      </ul>
-    </div>
+    @if (skills && skills.FrontEnd && skills.FrontEnd.length > 0) {
+      <div>
+        <ul class="lg:inline-flex xl:inline-flex grid-flow-row">
+          @for (frontEnd of skills.FrontEnd; track frontEnd) {
+            <li class="p-2 font-bold">{{frontEnd}}</li>
+          }
+        </ul>
+      </div>
+    }
   </div>
 </div>
