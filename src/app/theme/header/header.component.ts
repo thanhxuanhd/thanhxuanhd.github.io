@@ -18,13 +18,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.isDarkTheme = this.themeService.isDarkMode();
-    this.themeSubscription = this.themeService.theme.subscribe(theme => {
-      if (theme === 'dark') {
-        document.body.classList.add('dark');
-      } else {
-        document.body.classList.remove('dark');
-      }
-    });
   }
 
   onToggleMenu($event: any) {

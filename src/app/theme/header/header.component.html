@@ -1,19 +1,12 @@
-<div class="relative shadow-sm mb-5" [ngClass]="isDarkTheme ? 'bg-gray-700': ''">
+<div class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200 dark:bg-gray-900 dark:border-gray-700">
   <div class="w-full mx-auto px-4 sm:px-4">
     <div class="flex justify-between items-center py-3 md:justify-start md:space-x-10">
       <div class="flex justify-start lg:w-0 lg:flex-1">
         <a href="#">
           <span class="sr-only">Workflow</span>
-          @if (isDarkTheme) {
-            <span class="text-2xl font-bold tracking-tighter text-primary">
+          <span class="text-3xl font-bold tracking-tighter text-blue-600">
               X.
-            </span>
-          }
-          @if (!isDarkTheme) {
-            <span class="text-2xl font-bold tracking-tighter text-primary">
-              X.
-            </span>
-          }
+          </span>
         </a>
       </div>
       <div class="-mr-2 -my-2 md:hidden">
@@ -21,7 +14,6 @@
                 class=" rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
                 aria-expanded="false" (click)="onToggleMenu($event)">
           <span class="sr-only">Open menu</span>
-          <!-- Heroicon name: outline/menu -->
           <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
@@ -29,13 +21,16 @@
         </button>
       </div>
       <nav class="hidden md:flex space-x-10">
-        <a routerLink="/home" routerLinkActive="active-link font-bold" class="text-base">
+        <a routerLink="/home" routerLinkActive="active-link font-bold"
+           class="transition-colors ">
           <span>Home</span>
         </a>
-        <a routerLink="/work-experiences" routerLinkActive="active-link font-bold" class="text-base">
+        <a routerLink="/work-experiences" routerLinkActive="active-link font-bold"
+           class="transition-colors ">
           Work
         </a>
-        <a routerLink="/contact" routerLinkActive="active-link font-bold" class="text-base">
+        <a routerLink="/contact" routerLinkActive="active-link font-bold"
+           class="transition-colors ">
           Contact
         </a>
 
@@ -59,7 +54,7 @@
             </svg>
           </span>
         }
-
+        <div class="h-6 w-px bg-gray-200"></div>
         <a rel="noopener" class="ml-2 font-bold" href="https://github.com/thanhxuanhd" target="_blank">
           @if (!isDarkTheme) {
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
@@ -98,7 +93,7 @@
       <div class="pt-5 pb-6 px-5">
         <div class="flex items-center justify-between">
           <div>
-            <span class="text-2xl font-bold tracking-tighter">
+            <span class="text-3xl font-bold tracking-tighter text-blue-500">
               X.
             </span>
           </div>

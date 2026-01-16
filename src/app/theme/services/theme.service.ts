@@ -1,27 +1,31 @@
-import { ChangeDetectorRef, EventEmitter, Injectable, Renderer2, RendererFactory2 } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import {effect, Injectable, Renderer2, RendererFactory2, signal} from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ThemeService {
-  themeChanged: EventEmitter<string> = new EventEmitter<string>();
-  theme = new BehaviorSubject<string>('light');
+  private renderer: Renderer2;
+  public darkMode = signal(localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches));
+  constructor(private rendererFactory: RendererFactory2) {
+    this.renderer = this.rendererFactory.createRenderer(null, null);
 
-  constructor() {
-    let theme = localStorage.getItem('theme') ?? 'light'; // Get the theme from local storage or set it to 'light' if there is no theme in local storage
-    this.theme = new BehaviorSubject<string>(theme);
-    localStorage.setItem('theme', this.theme.value); // Store the selected theme in local storage
-    this.theme.next(theme);
+    // Effect to update the DOM and localStorage whenever darkMode signal changes
+    effect(() => {
+      if (this.darkMode()) {
+        this.renderer.addClass(document.documentElement, 'dark');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        this.renderer.removeClass(document.documentElement, 'dark');
+        localStorage.setItem('theme', 'light');
+      }
+    });
   }
 
   switchTheme(): void {
-    let theme = this.theme.value === 'light' ? 'dark' : 'light';
-    localStorage.setItem('theme', theme); // Store the selected theme in local storage
-    this.theme.next(theme);
+    this.darkMode.update(value => !value);
   }
 
   isDarkMode(): boolean {
-    return this.theme.value === 'light' ? false : true;
+    return this.darkMode();
   }
 }

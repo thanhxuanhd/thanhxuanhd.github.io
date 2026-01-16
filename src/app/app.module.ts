@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ThemeModule } from './theme';
 import {NgOptimizedImage} from "@angular/common";
+import {RouterModule} from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import {NgOptimizedImage} from "@angular/common";
     BrowserModule,
     AppRoutingModule,
     ThemeModule,
-    NgOptimizedImage
+    NgOptimizedImage,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
