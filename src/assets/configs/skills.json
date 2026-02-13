@@ -1,5 +1,5 @@
 {
   "BackEnd": ["ASP.NET", "ASP.NET Core", "Web Service", "WCF"],
-  "FrontEnd": ["Angular JS", "Angular", "Blazor", "Bootstrap", "Tailwind CSS"],
-  "Database": ["MS SQL Server", "Mongo Db"]
+  "FrontEnd": ["Angular JS", "Angular", "Blazor", "Vue", "NextJs","Bootstrap", "Tailwind CSS"],
+  "Database": ["MS SQL Server", "Mongo DB"]
 }

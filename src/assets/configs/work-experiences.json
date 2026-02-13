@@ -4,31 +4,31 @@
     "companyName": "Nashtech",
     "workTimes": "10/2021 – Present",
     "role": "Senior Software Engineer",
-    "myResponsibility": "Switch to another project using Microservice based on NET CORE. <br/>Build report using trigger event message type sent from other service queues to application and store report in MongoDb database. <br/>Consumer the message sent to application queues and process business logic using the message.<br/>Reviewed code changed using coding convention and business defined in PBI correct or not. <br/>Manage repository source code by Azure Devops repository",
-    "technology": "NET CORE, MongoDB and Docker container"
+    "myResponsibility": "Switched to a project using Microservices based on .NET Core.<br/>Built reports using event messages triggered from domain events produced by other services.<br/> Reviewed code changes to ensure adherence to coding conventions and business requirements defined in the Sprint Backlog.<br/>Managed source code repositories using Azure DevOps. <br/> Designed solutions following requirements provided by customers and presented main ideas to team members. <br /> Investigated production issues and advised customers on how to resolve them as quickly as possible. <br/> Trained new team members joining the project and documented knowledge gained during the project.",
+    "technology": ".NET Core, MongoDB, SQL Server, ActiveMQ, Vue, Dellboomi and Docker containers"
   },
   {
     "order": 1,
     "companyName": "Nashtech",
     "workTimes": "02/2020 – 10/2021",
     "role": "Senior Software Engineer",
-    "myResponsibility": "Based on experience working in projects before and promoted to a new role as Senior Software Engineer.<br/>Convert olds function from Webform, Winform to ASP.NET MVC, reuse existing WebService or write new WCF support application.<br/>Improved current code base or query for easy maintenance features. <br/>Review code for team member and suggest solution if have.<br/>Write command script build application using Jenkins Pipeline based on existing script build and provide a package to QC after completion.<br/>Worked in a Scrum approach and reported my tasks in daily stand ups. Used Jira to manage tasks. Write documents and guidelines for installation in the Confluence page.<br/> Build report based on requirement from customer need to output to PDF and CSV (Report Builder).<br/>Support customer investigated and answer existing behavior when they have ad-hoc production issues.<br/>Training and sharing project’s knowledge when a new member joins the project.<br/>Improved my technical skills with Microservice architecture and applied domain driven design with ASP.NET Core, Docker container",
-    "technology": "Webform , ASP.NET MVC5, Web service, WCF SQL Server Procedure"
+    "myResponsibility": "Promoted to Senior Software Engineer based on prior project performance.<br/>Converted legacy functions from Web Forms and WinForms to ASP.NET MVC, reusing existing Web Services or creating new WCF services.<br/>Improved the existing codebase and queries to facilitate maintenance.<br/>Reviewed team members' code and suggested solutions.<br/>Wrote build scripts using Jenkins Pipeline based on existing scripts and provided packages to QC upon completion.<br/>Worked in a Scrum environment, reporting tasks in daily stand-ups. Used Jira for task management. Wrote installation documents and guidelines on Confluence.<br/>Built reports based on customer requirements with output to PDF and CSV using Report Builder.<br/>Supported customers in investigating and resolving ad-hoc production issues.<br/>Trained and shared project knowledge with new team members.<br/>Improved technical skills in Microservice architecture and Domain-Driven Design using ASP.NET Core and Docker containers.",
+    "technology": "Web Forms, ASP.NET MVC 5, Web Services, WCF, SQL Server Stored Procedures"
   },
   {
     "order": 2,
     "companyName": "Nashtech",
     "workTimes": "01/2018 – 02/2020",
     "role": "Software Engineer",
-    "myResponsibility": "Investigated bugs from production issues and feedback total effort, impact area with solution. After that, get confirmation from the customer whether the solution can apply or keep existing behavior.<br/>Maintenance and custom features based on request change for some specific project. The technologies are Webform, ASP.NET, WCF and WebService.<br/> Improved performance SQL query for procedure (ADO.NET – WebService). <br/> Write technical specs for features. The document will contain a design list out table, business logic, service and application (windows service, web application) should change.<br/>Support QC when deployment package build has some issues such as configuration or setup environment.<br/> Manage repository source code by TortoiseSVN.",
-    "technology": "Webform , ASP.NET MVC5, Web service, WCF SQL Server Procedure"
+    "myResponsibility": "Investigated production bugs, estimating effort and impact. Obtained customer confirmation on proposed solutions versus retaining existing behavior.<br/>Maintained and developed custom features based on change requests. Technologies used included Web Forms, ASP.NET, WCF, and Web Services.<br/>Improved SQL query performance for stored procedures (ADO.NET – Web Service).<br/>Wrote technical specifications for features, detailing database tables, business logic, and required changes to services and applications.<br/>Supported QC with deployment package issues, including configuration and environment setup.<br/>Managed source code repositories using TortoiseSVN.",
+    "technology": "Web Forms, ASP.NET MVC 5, Web Services, WCF, SQL Server Stored Procedures"
   },
   {
     "order": 3,
     "companyName": "KLOON",
     "workTimes": "07/2016 – 01/2018",
     "role": "Junior Developer",
-    "myResponsibility": "Designed and implemented REST API based on requirements defined in PBI using ASP.NET CORE and Entity Framework Core to connect with database MS SQL Server.<br> Write unit tests to clarify business logic using xunit. <br/> Build feature single application using AngularJS, Bootstraps 3 and DevExtreme.<br/>Provided build and support deployment to testers.<br/> Learn Angular Framework and try to build clear architecture for some small project. <br/>Manage repository source code by Team Foundation Server (TFS) – Azure Devops.",
+    "myResponsibility": "Designed and implemented REST APIs based on PBI requirements using ASP.NET Core and Entity Framework Core with MS SQL Server.<br>Wrote unit tests to verify business logic using xUnit.<br/>Built Single Page Application features using AngularJS, Bootstrap 3, and DevExtreme.<br/>Provided builds and supported deployment for testers.<br/>Learned Angular Framework and built clean architectures for small projects.<br/>Managed source code repositories using Team Foundation Server (TFS) – Azure DevOps.",
     "technology": ""
   }
 ]
