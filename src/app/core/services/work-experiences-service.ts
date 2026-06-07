@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { IWorkExperience } from '../models';
-import workExperiences from 'src/assets/configs/work-experiences.json';
+import workExperiences from '@assets/configs/work-experiences.json';
 
 @Injectable({
   providedIn: 'root'

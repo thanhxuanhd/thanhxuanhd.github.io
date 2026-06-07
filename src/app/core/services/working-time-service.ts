@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { IWorkTime } from '../models';
-import workTimes from 'src/assets/configs/works.json';
+import workTimes from '@assets/configs/works.json';
 
 @Injectable({
   providedIn: 'root'

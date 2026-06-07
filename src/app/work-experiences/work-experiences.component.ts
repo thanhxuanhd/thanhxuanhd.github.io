@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import {
   IWorkExperience,
   WorkExperiencesService
@@ -8,6 +8,7 @@ import {
     selector: 'app-work-experiences',
     templateUrl: './work-experiences.component.html',
     styleUrls: ['./work-experiences.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class WorkExperiencesComponent implements OnInit {
