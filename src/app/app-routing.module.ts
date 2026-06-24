@@ -6,6 +6,7 @@ const routes: Routes = [
   { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
   { path: 'contact', loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule) },
   { path: 'work-experiences', loadChildren: () => import('./work-experiences/work-experiences.module').then(m => m.WorkExperiencesModule) },
+  { path: 'mongodb-cert', loadChildren: () => import('./mongodb-cert/mongodb-cert.module').then(m => m.MongodbCertModule) },
   { path: '**', loadChildren: () => import('./not-found/not-found.module').then(m => m.NotFoundModule) }
 ];
 

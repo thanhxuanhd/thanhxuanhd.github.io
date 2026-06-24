@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { HomeComponent } from './home.component';
 import { HomeRoutingModule } from './home-routing.module';
 import { WorkTimeComponent } from './work-time/work-time.component';
@@ -13,7 +13,8 @@ import { WorkTimeComponent } from './work-time/work-time.component';
   ],
   imports: [
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    NgOptimizedImage
   ],
   providers: []
 })

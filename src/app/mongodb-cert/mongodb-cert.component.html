@@ -1,0 +1,387 @@
+ <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-16">
+        <section id="blueprint" class="scroll-mt-24">
+            <div class="mb-8">
+                <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight mb-3">The Exam Blueprint</h2>
+                <p class="text-lg text-slate-600 max-w-3xl">Understanding the distribution of topics is critical for effective study. The MongoDB Associate Developer exam heavily favors practical data manipulation over administrative tooling. Review the composition below to prioritize your preparation time.</p>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div class="w-full">
+                    <div class="chart-container">
+                        <canvas id="weightChart"></canvas>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <div class="p-5 rounded-xl bg-teal-50 border border-teal-100 flex gap-4 items-start">
+                        <div class="w-12 h-12 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 font-bold text-lg shrink-0">51%</div>
+                        <div>
+                            <h3 class="font-bold text-slate-900 text-lg mb-1">The CRUD Dominance</h3>
+                            <p class="text-sm text-slate-700">More than half of the exam tests your ability to write correct queries, targeted updates, and aggregation pipelines. Perfecting syntax here is non-negotiable.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <div class="text-indigo-600 font-bold text-xl mb-1">18%</div>
+                            <h4 class="font-semibold text-slate-800 text-sm">Drivers (.NET/C#)</h4>
+                            <p class="text-xs text-slate-500 mt-1">Connection pooling, URIs, and synchronous vs asynchronous method syntax.</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <div class="text-sky-600 font-bold text-xl mb-1">17%</div>
+                            <h4 class="font-semibold text-slate-800 text-sm">Indexes</h4>
+                            <p class="text-xs text-slate-500 mt-1">Resolving COLLSCANs, understanding execution plans, and compound sorting.</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <div class="text-emerald-600 font-bold text-xl mb-1">8%</div>
+                            <h4 class="font-semibold text-slate-800 text-sm">Document Model</h4>
+                            <p class="text-xs text-slate-500 mt-1">BSON Types (especially Decimal128 & ObjectId) and schema flexibility.</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <div class="text-amber-600 font-bold text-xl mb-1">6%</div>
+                            <h4 class="font-semibold text-slate-800 text-sm">Data Modeling & Tools</h4>
+                            <p class="text-xs text-slate-500 mt-1">Embedding vs Linking, 16MB limits, and Atlas Data Explorer basics.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="crud" class="scroll-mt-24">
+            <div class="mb-8">
+                <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight mb-3">CRUD Operations Command Center</h2>
+                <p class="text-lg text-slate-600 max-w-3xl">This section represents the bulk of your exam score. Navigate through the interactive tabs to explore the nuances of creating, reading, updating, and aggregating data, including identifying common syntax pitfalls designed to trick you on the test.</p>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                <div class="flex flex-wrap border-b border-slate-200 bg-slate-50" id="crud-tabs">
+                    <button class="tab-btn active flex-1 md:flex-none text-center px-6 py-4 text-sm font-semibold text-slate-600 hover:bg-slate-100 transition-colors border-b-2 border-transparent focus:outline-none" data-target="tab-create">Insert</button>
+                    <button class="tab-btn flex-1 md:flex-none text-center px-6 py-4 text-sm font-semibold text-slate-600 hover:bg-slate-100 transition-colors border-b-2 border-transparent focus:outline-none" data-target="tab-update">Update & Upsert</button>
+                    <button class="tab-btn flex-1 md:flex-none text-center px-6 py-4 text-sm font-semibold text-slate-600 hover:bg-slate-100 transition-colors border-b-2 border-transparent focus:outline-none" data-target="tab-read">Read & Query</button>
+                    <button class="tab-btn flex-1 md:flex-none text-center px-6 py-4 text-sm font-semibold text-slate-600 hover:bg-slate-100 transition-colors border-b-2 border-transparent focus:outline-none" data-target="tab-agg">Aggregation</button>
+                </div>
+
+                <div class="p-6 md:p-8">
+                    <div id="tab-create" class="tab-content active">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div>
+                                <h3 class="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2"><span class="text-emerald-500">&#10004;</span> Properly Formed</h3>
+                                <p class="text-sm text-slate-600 mb-4"><code>insertOne</code> requires a single object. <code>insertMany</code> requires an array of objects.</p>
+                                <div class="bg-slate-900 rounded-xl p-4 text-slate-300 text-sm overflow-x-auto code-font custom-scrollbar">
+<span class="text-slate-500">// Single Document</span>
+db.users.insertOne({ "name": "Alice", "role": "admin" })
+
+<span class="text-slate-500">// Multiple Documents (Note the array brackets)</span>
+db.users.insertMany([
+  { "name": "Bob", "age": 25 },
+  { "name": "Charlie", "age": 28 }
+])
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2"><span class="text-red-500">&#10008;</span> Improperly Formed (Traps)</h3>
+                                <p class="text-sm text-slate-600 mb-4">Watch out for missing arrays, multiple arguments to single inserts, or non-string keys.</p>
+                                <div class="bg-red-950 rounded-xl p-4 text-red-200 text-sm overflow-x-auto code-font custom-scrollbar border border-red-900">
+<span class="text-red-400/50">// ERROR: Passing multiple args instead of array</span>
+db.users.insertOne({ "name": "Alice" }, { "name": "Bob" })
+
+<span class="text-red-400/50">// ERROR: Missing array [] inside insertMany</span>
+db.users.insertMany({ "name": "Bob" }, { "name": "Charlie" })
+
+<span class="text-red-400/50">// ERROR: Key is an integer, must be a string</span>
+db.users.insertOne({ 123: "Invalid Key Type" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="tab-update" class="tab-content">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                            <div class="bg-red-50 rounded-xl border border-red-100 p-6 relative overflow-hidden">
+                                <div class="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">DANGER</div>
+                                <h3 class="font-bold text-red-800 text-lg mb-2">Full Document Replacement</h3>
+                                <p class="text-sm text-red-700 mb-4">Executing an update operation <strong>without</strong> using update operators (like <code>$set</code>) replaces the entire document, permanently losing unspecified fields.</p>
+                                <div class="bg-white/80 rounded p-3 text-sm code-font text-slate-800 border border-red-200">
+db.users.updateOne(
+  { "_id": 101 },
+  <span class="bg-red-200 font-bold">{ "name": "Alice", "status": "Active" }</span>
+)
+                                </div>
+                            </div>
+                            
+                            <div class="bg-teal-50 rounded-xl border border-teal-100 p-6 relative overflow-hidden">
+                                <div class="absolute top-0 right-0 bg-teal-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">SAFE</div>
+                                <h3 class="font-bold text-teal-800 text-lg mb-2">Targeted Update</h3>
+                                <p class="text-sm text-teal-700 mb-4">The <code>$set</code> operator modifies <strong>only</strong> specified fields, leaving the rest of the document completely intact.</p>
+                                <div class="bg-white/80 rounded p-3 text-sm code-font text-slate-800 border border-teal-200">
+db.users.updateOne(
+  { "_id": 101 },
+  <span class="bg-teal-200 font-bold">{ $set: { "city": "Chicago" } }</span>
+)
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-50 rounded-xl border border-slate-200 p-6">
+                            <h3 class="font-bold text-slate-900 text-lg mb-3">Upsert & Atomicity Dynamics</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <h4 class="font-semibold text-indigo-700 mb-2">The Upsert Pattern</h4>
+                                    <p class="text-sm text-slate-600 mb-3"><code>upsert: true</code> updates if found, inserts if missing. <code>$setOnInsert</code> is ignored unless a new document is created.</p>
+                                    <div class="bg-slate-900 rounded-lg p-3 text-slate-300 text-xs code-font overflow-x-auto custom-scrollbar">
+db.users.updateOne(
+  { "email": "new@example.com" },
+  { 
+    $set: { "role": "member" },
+    <span class="text-teal-400">$setOnInsert: { "joinedAt": new Date() }</span>
+  },
+  { upsert: true }
+)
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-indigo-700 mb-2">Atomic Concurrency</h4>
+                                    <p class="text-sm text-slate-600 mb-3"><code>findAndModify</code> performs finding and updating in one atomic step, preventing race conditions where multiple threads might fetch the same document state.</p>
+                                    <div class="p-3 bg-white border border-slate-200 rounded-lg text-sm text-slate-700">
+                                        If Thread A runs <code>findAndModify</code> to change status from "pending" to "processing", Thread B attempting an <code>updateOne</code> on "pending" will instantly find 0 matches, safely avoiding a collision.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="tab-read" class="tab-content">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="space-y-6">
+                                <div>
+                                    <h3 class="text-lg font-bold text-slate-900 mb-2">Array Querying</h3>
+                                    <p class="text-sm text-slate-600 mb-3">MongoDB behaves differently based on operators when targeting arrays.</p>
+                                    <div class="bg-slate-900 rounded-xl p-4 text-slate-300 text-sm overflow-x-auto code-font custom-scrollbar space-y-3">
+<div class="pb-2 border-b border-slate-700">
+<span class="text-slate-500">// 1. Array Inclusion (Any match)</span>
+db.coll.find({ "tags": { $in: ["green", "blue"] } })
+</div>
+<div>
+<span class="text-slate-500">// 2. Specific Element Criteria</span>
+<span class="text-teal-400">// Matches if one array element satisfies ALL conditions</span>
+db.orders.find({ 
+  "items": { 
+    $elemMatch: { "product": "banana", "qty": { $gt: 10 } } 
+  } 
+})
+</div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-bold text-slate-900 mb-2">Cursor Handling</h3>
+                                    <ul class="text-sm text-slate-700 space-y-2 list-disc pl-5">
+                                        <li><code>toArray()</code>: Converts all docs into a memory array. Memory-intensive!</li>
+                                        <li><code>forEach(cb)</code>: Iteratively streams elements to save memory.</li>
+                                        <li><code>countDocuments()</code>: Scans index/docs for accurate counts based on a query filter.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h3 class="text-lg font-bold text-slate-900 mb-2">Sorting, Limiting & Projections</h3>
+                                <p class="text-sm text-slate-600 mb-4">Sort order (`1` ascending, `-1` descending) is always applied before Limits.</p>
+                                
+                                <div class="bg-amber-50 rounded-xl border border-amber-200 p-5">
+                                    <h4 class="font-bold text-amber-800 mb-2">Projection Error Trap ⚠️</h4>
+                                    <p class="text-sm text-amber-700 mb-3">You cannot mix inclusions (`1`) and exclusions (`0`) in a single projection, with the sole exception of the <code>_id</code> field.</p>
+                                    <div class="bg-white rounded p-3 text-sm code-font text-slate-800 border border-amber-300 space-y-2">
+                                        <div class="text-red-600"><span class="font-bold">&#10008;</span> db.users.find({}, { "name": 1, "age": 0 })</div>
+                                        <div class="text-emerald-600"><span class="font-bold">&#10004;</span> db.users.find({}, { "name": 1, "_id": 0 })</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="tab-agg" class="tab-content">
+                        <div class="max-w-3xl">
+                            <h3 class="text-lg font-bold text-slate-900 mb-3">The Pipeline Approach</h3>
+                            <p class="text-sm text-slate-600 mb-6">Aggregations process data records and return computed results. Documents pass through stages sequentially, transforming at each step.</p>
+                            
+                            <div class="space-y-4 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-300 before:to-transparent">
+                                
+                                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                                    <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-teal-500 text-white font-bold shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">1</div>
+                                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+                                        <h4 class="font-bold text-slate-800 text-base mb-1">$match</h4>
+                                        <p class="text-sm text-slate-600 mb-2">Filters the document stream early to reduce processing load. Syntax is identical to standard queries.</p>
+                                        <div class="bg-slate-100 rounded px-2 py-1 text-xs code-font text-slate-700">{ $match: { "status": "completed" } }</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                                    <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-indigo-500 text-white font-bold shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">2</div>
+                                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+                                        <h4 class="font-bold text-slate-800 text-base mb-1">$group</h4>
+                                        <p class="text-sm text-slate-600 mb-2">Groups documents by a specified <code>_id</code> key and applies accumulator operations (e.g., $sum).</p>
+                                        <div class="bg-slate-100 rounded px-2 py-1 text-xs code-font text-slate-700">{ $group: { "_id": "$product", "rev": { $sum: "$amount" } } }</div>
+                                    </div>
+                                </div>
+
+                                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                                    <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-sky-500 text-white font-bold shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">3</div>
+                                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+                                        <h4 class="font-bold text-slate-800 text-base mb-1">$lookup / $out</h4>
+                                        <p class="text-sm text-slate-600 mb-2"><code>$lookup</code> joins collections. <code>$out</code> persists results to a new collection, overwriting if it exists.</p>
+                                        <div class="bg-slate-100 rounded px-2 py-1 text-xs code-font text-slate-700">{ $out: "revenue_report" }</div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="indexes" class="scroll-mt-24">
+            <div class="mb-8">
+                <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight mb-3">Indexes & Data Modeling</h2>
+                <p class="text-lg text-slate-600 max-w-3xl">Without indexes, MongoDB must scan every document to fulfill a query. This section compares the performance impact of indexing and highlights structural anti-patterns that degrade database efficiency.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 flex flex-col h-full">
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Performance: IXSCAN vs COLLSCAN</h3>
+                    <p class="text-sm text-slate-600 mb-6">Theoretical execution time for a query matching 50 documents out of a 1,000,000 document collection.</p>
+                    <div class="chart-container flex-1">
+                        <canvas id="indexChart"></canvas>
+                    </div>
+                    <div class="mt-6 p-4 bg-slate-50 rounded-xl border border-slate-200">
+                        <h4 class="font-bold text-slate-800 text-sm mb-2">Resolving In-Memory Sorts</h4>
+                        <p class="text-sm text-slate-600">If <code>explain()</code> reveals a <code>SORT</code> stage instead of an index scan, create a compound index matching the exact sort direction to eliminate RAM overhead: <br><code class="bg-slate-200 text-indigo-700 px-1 rounded text-xs mt-2 inline-block">db.coll.createIndex({ "lastName": 1, "firstName": -1 })</code></p>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
+                        <h3 class="text-xl font-bold text-slate-900 mb-4">Embedding vs. Linking Strategy</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-emerald-50 border border-emerald-200 p-4 rounded-xl">
+                                <h4 class="font-bold text-emerald-800 flex items-center gap-2 mb-2"><span class="text-xl">&#8834;</span> Embed (Denormalize)</h4>
+                                <ul class="text-sm text-emerald-900 space-y-1">
+                                    <li>&bull; 1:1 or 1:Few relationships</li>
+                                    <li>&bull; Data rarely changes</li>
+                                    <li>&bull; Elements accessed together</li>
+                                </ul>
+                            </div>
+                            <div class="bg-indigo-50 border border-indigo-200 p-4 rounded-xl">
+                                <h4 class="font-bold text-indigo-800 flex items-center gap-2 mb-2"><span class="text-xl">&#8734;</span> Link (Reference)</h4>
+                                <ul class="text-sm text-indigo-900 space-y-1">
+                                    <li>&bull; 1:Many (unbounded growth)</li>
+                                    <li>&bull; Many-to-Many relationships</li>
+                                    <li>&bull; Frequently updated records</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
+                        <h3 class="text-xl font-bold text-slate-900 mb-4">Data Modeling Anti-Patterns</h3>
+                        <ul class="space-y-4">
+                            <li class="flex gap-4 items-start">
+                                <div class="w-8 h-8 rounded bg-red-100 text-red-600 flex items-center justify-center font-bold shrink-0 mt-0.5">1</div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 text-sm">Unbounded Array Growth</h4>
+                                    <p class="text-sm text-slate-600">Storing unlimited comments inside a post array will eventually breach the strict 16MB BSON document limit, causing app crashes.</p>
+                                </div>
+                            </li>
+                            <li class="flex gap-4 items-start">
+                                <div class="w-8 h-8 rounded bg-red-100 text-red-600 flex items-center justify-center font-bold shrink-0 mt-0.5">2</div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 text-sm">Over-Referencing Static Data</h4>
+                                    <p class="text-sm text-slate-600">Creating separate collections for tiny, static data points (like country codes) causes inefficient, unnecessary lookup joins.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="drivers" class="scroll-mt-24 mb-16">
+            <div class="mb-8">
+                <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight mb-3">Drivers & Connection Architecture</h2>
+                <p class="text-lg text-slate-600 max-w-3xl">Understanding how application drivers (like C#/.NET) communicate with the cluster is crucial. This covers connection strings, synchronous vs asynchronous operations, and the efficiency mechanics of connection pooling.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+                <div class="lg:col-span-1 bg-slate-900 rounded-2xl shadow-sm border border-slate-800 p-6 text-slate-300 flex flex-col">
+                    <h3 class="text-xl font-bold text-white mb-4">C# Driver Operations</h3>
+                    <p class="text-sm text-slate-400 mb-4">The C# driver heavily utilizes Builders for type-safe query construction.</p>
+                    <div class="bg-black/50 p-4 rounded-xl border border-slate-700 text-xs code-font overflow-x-auto custom-scrollbar flex-1">
+<span class="text-teal-400">// Update Many Example</span>
+var filter = Builders&lt;Product&gt;
+    .Filter.Eq(p => p.Name, "Chair");
+
+var update = Builders&lt;Product&gt;
+    .Update.Set(p => p.Price, 50);
+
+await collection
+    .UpdateManyAsync(filter, update);
+
+<br>
+<span class="text-teal-400">// Find Async Example</span>
+var products = await collection
+    .Find(p => p.Price > 50)
+    .ToListAsync();
+                    </div>
+                </div>
+
+                <div class="lg:col-span-2 space-y-8 flex flex-col">
+                    <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">URI Connection String Anatomy</h3>
+                        <div class="bg-slate-50 border border-slate-200 p-4 rounded-xl break-words text-sm code-font mb-4">
+                            <span class="text-teal-700 font-bold">mongodb+srv://</span><span class="text-slate-500">username:password</span><span class="text-slate-800">@</span><span class="text-indigo-600 font-bold">cluster.mongodb.net</span><span class="text-slate-800">/</span><span class="text-amber-600">dbname</span><span class="text-slate-400">?</span><span class="text-pink-600">retryWrites=true&w=majority</span>
+                        </div>
+                        <ul class="text-sm text-slate-600 grid grid-cols-1 sm:grid-cols-2 gap-2">
+                            <li><span class="inline-block w-3 h-3 rounded-full bg-teal-500 mr-2"></span>DNS Seed List format</li>
+                            <li><span class="inline-block w-3 h-3 rounded-full bg-indigo-500 mr-2"></span>Cluster Host Address</li>
+                            <li><span class="inline-block w-3 h-3 rounded-full bg-amber-500 mr-2"></span>Default Authentication Database</li>
+                            <li><span class="inline-block w-3 h-3 rounded-full bg-pink-500 mr-2"></span>Options (Retry logic, Write Concern)</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 flex-1 flex flex-col justify-center">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Connection Pooling Mechanics</h3>
+                        <p class="text-sm text-slate-600 mb-6">Pooling prevents the massive latency spike of establishing TCP handshakes and authenticating every single time an application executes a query.</p>
+                        
+                        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 w-full max-w-2xl mx-auto">
+                            <div class="bg-slate-100 border border-slate-300 rounded-xl p-4 text-center w-full sm:w-1/4 shadow-sm">
+                                <div class="text-2xl mb-1">💻</div>
+                                <div class="text-xs font-bold text-slate-800">Application Node</div>
+                            </div>
+                            
+                            <div class="hidden sm:block text-slate-300 font-bold text-2xl">&#8594;</div>
+                            <div class="sm:hidden text-slate-300 font-bold text-2xl">&#8595;</div>
+
+                            <div class="bg-indigo-50 border-2 border-indigo-200 rounded-xl p-4 text-center w-full sm:w-2/4 shadow-md relative">
+                                <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-indigo-500 text-white text-[10px] uppercase font-bold px-2 py-0.5 rounded-full">The Driver</div>
+                                <div class="text-sm font-bold text-indigo-900 mb-2">Connection Pool</div>
+                                <div class="flex justify-center gap-1">
+                                    <div class="h-1.5 w-6 bg-indigo-500 rounded-full"></div>
+                                    <div class="h-1.5 w-6 bg-indigo-500 rounded-full"></div>
+                                    <div class="h-1.5 w-6 bg-indigo-300 rounded-full"></div>
+                                    <div class="h-1.5 w-6 bg-indigo-200 rounded-full"></div>
+                                </div>
+                                <div class="text-[10px] text-indigo-700 mt-2 font-medium">Reuses Open Sockets</div>
+                            </div>
+
+                            <div class="hidden sm:block text-slate-300 font-bold text-2xl">&#8594;</div>
+                            <div class="sm:hidden text-slate-300 font-bold text-2xl">&#8595;</div>
+
+                            <div class="bg-teal-50 border border-teal-200 rounded-xl p-4 text-center w-full sm:w-1/4 shadow-sm">
+                                <div class="text-2xl mb-1">🍃</div>
+                                <div class="text-xs font-bold text-teal-900">Atlas Cluster</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
