@@ -1,0 +1,15 @@
+.tab-content {
+  display: none;
+  &.active {
+    display: block;
+  }
+}
+
+.tab-btn {
+  &.active {
+    border-color: #0d9488; /* teal-600 */
+    color: #0d9488; /* slate-900 */
+    font-weight: 700;
+    background-color: #f0fdfa;
+  }
+}
