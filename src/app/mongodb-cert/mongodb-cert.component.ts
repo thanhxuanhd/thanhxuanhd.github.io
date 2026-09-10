@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, AfterViewInit, ViewChild, Inject, PLATFORM_ID, signal } from '@angular/core';
+import { Component, ElementRef, OnInit, AfterViewInit, ViewChild, Inject, PLATFORM_ID, signal, OnDestroy } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { Chart, registerables } from 'chart.js';
 
@@ -20,9 +20,13 @@ function wrapLabel(label: string): string | string[] {
   styleUrl: './mongodb-cert.component.scss',
   standalone: false
 })
-export class MongodbCertComponent implements OnInit, AfterViewInit {
+export class MongodbCertComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('weightChart') weightChart!: ElementRef<HTMLCanvasElement>;
   @ViewChild('indexChart') indexChart!: ElementRef<HTMLCanvasElement>;
+
+  private charts: Chart[] = [];
+  private animationFrameId: number | undefined;
+  private destroyed = false;
 
   tabs = [
     {
@@ -56,17 +60,29 @@ export class MongodbCertComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     if (isPlatformBrowser(this.platformId)) {
-      this.initCharts();
+      this.animationFrameId = requestAnimationFrame(() => {
+        if (!this.destroyed) {
+          this.initCharts();
+        }
+      });
     }
   }
 
-  initCharts() {
-    if (this.state.chartsRendered) return;
+  initCharts(): void {
+    if (this.state.chartsRendered) {
+      return;
+    }
 
     const weightCanvas = this.weightChart?.nativeElement;
     const indexCanvas = this.indexChart?.nativeElement;
 
     if (!weightCanvas || !indexCanvas) return;
+
+    const existingWeightChart = Chart.getChart(weightCanvas);
+    const existingIndexChart = Chart.getChart(indexCanvas);
+
+    existingWeightChart?.destroy();
+    existingIndexChart?.destroy();
 
     const weightCtx = weightCanvas.getContext('2d');
     const indexCtx = indexCanvas.getContext('2d');
@@ -77,7 +93,7 @@ export class MongodbCertComponent implements OnInit, AfterViewInit {
     const wrappedWeightLabels = rawWeightLabels.map(wrapLabel);
 
     // 1. Weight Chart (Doughnut)
-    new Chart(weightCtx, {
+    const weightChart = new Chart(weightCtx, {
       type: 'doughnut',
       data: {
         labels: wrappedWeightLabels,
@@ -96,6 +112,7 @@ export class MongodbCertComponent implements OnInit, AfterViewInit {
         }]
       },
       options: {
+        animation: false,
         responsive: true,
         maintainAspectRatio: false,
         cutout: '70%',
@@ -131,7 +148,7 @@ export class MongodbCertComponent implements OnInit, AfterViewInit {
     });
 
     // 2. Index Chart (Horizontal Bar Chart)
-    new Chart(indexCtx, {
+    const indexChart = new Chart(indexCtx, {
       type: 'bar',
       data: {
         labels: ['COLLSCAN', 'IXSCAN'],
@@ -145,6 +162,7 @@ export class MongodbCertComponent implements OnInit, AfterViewInit {
         }]
       },
       options: {
+        animation: false,
         indexAxis: 'y',
         responsive: true,
         maintainAspectRatio: false,
@@ -185,7 +203,22 @@ export class MongodbCertComponent implements OnInit, AfterViewInit {
       }
     });
 
+    this.charts.push(weightChart, indexChart);
     this.state.chartsRendered = true;
+  }
+
+  ngOnDestroy(): void {
+    this.destroyed = true;
+
+    if (this.animationFrameId !== undefined) {
+      cancelAnimationFrame(this.animationFrameId);
+    }
+
+    for (const chart of this.charts) {
+      chart.destroy();
+    }
+
+    this.charts = [];
   }
 
   selectTab(index: string): void {
