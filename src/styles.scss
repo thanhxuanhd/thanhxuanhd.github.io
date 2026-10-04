@@ -1,3 +1,282 @@
 /* You can add global styles to this file, and also import other style files */
 @use "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-label-code: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --text-label-code: 12px;
+  --text-label-code--line-height: 16px;
+  --text-label-code--letter-spacing: 0.03em;
+  --text-label-code--font-weight: 500;
+}
+
+:root {
+  color-scheme: light;
+  --glass-border: rgba(255, 255, 255, 0.78);
+  --glass-fill: rgba(255, 255, 255, 0.72);
+  --glass-shadow: 0 18px 48px rgba(15, 23, 42, 0.08);
+}
+
+.dark {
+  color-scheme: dark;
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-fill: rgba(26, 31, 46, 0.72);
+  --glass-shadow: 0 18px 48px rgba(0, 0, 0, 0.2);
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #f8fafc;
+}
+
+html.dark body {
+  background-color: #0e1321;
+}
+
+.dark .dark\:text-on-surface {
+  color: #dee2f6;
+}
+
+.dark .dark\:text-on-surface-variant {
+  color: #bdc8d1;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #38bdf8;
+  outline-offset: 3px;
+}
+
+.glass-app {
+  background:
+    radial-gradient(ellipse at 12% 0%, rgba(125, 211, 252, 0.12), transparent 34rem),
+    radial-gradient(ellipse at 92% 24%, rgba(196, 181, 253, 0.1), transparent 30rem);
+}
+
+.dark .glass-app {
+  background:
+    radial-gradient(ellipse at 12% 0%, rgba(56, 189, 248, 0.12), transparent 34rem),
+    radial-gradient(ellipse at 92% 24%, rgba(129, 140, 248, 0.1), transparent 30rem);
+}
+
+.glass-panel {
+  border: 1px solid var(--glass-border);
+  border-radius: 1.5rem;
+  background: var(--glass-fill);
+  box-shadow: var(--glass-shadow);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+}
+
+.glass-header {
+  border-bottom: 1px solid rgba(148, 163, 184, 0.16);
+  background: rgba(248, 250, 252, 0.76);
+  box-shadow: 0 8px 28px rgba(15, 23, 42, 0.06);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+}
+
+.dark .glass-header {
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+  background: rgba(14, 19, 33, 0.76);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
+}
+
+.glass-footer {
+  border-top: 1px solid rgba(148, 163, 184, 0.16);
+  background: rgba(248, 250, 252, 0.76);
+  box-shadow: 0 -8px 28px rgba(15, 23, 42, 0.04);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+}
+
+.dark .glass-footer {
+  border-top-color: rgba(255, 255, 255, 0.08);
+  background: rgba(14, 19, 33, 0.76);
+  box-shadow: 0 -8px 28px rgba(0, 0, 0, 0.18);
+}
+
+.glass-nav {
+  background: rgba(255, 255, 255, 0.66);
+}
+
+.dark .glass-nav {
+  background: rgba(22, 27, 42, 0.7);
+}
+
+.contact-page li {
+  align-items: center;
+  min-height: 2.75rem;
+  border-radius: 0.875rem;
+  padding: 0.5rem 0.75rem;
+  transition: background-color 160ms ease;
+}
+
+.contact-page li:hover {
+  background: rgba(148, 163, 184, 0.1);
+}
+
+.contact-page li svg {
+  flex: none;
+  color: #0369a1;
+}
+
+.dark .contact-page li svg {
+  filter: brightness(0) invert(1);
+}
+
+.cert-page .bg-white {
+  border-color: var(--glass-border);
+  background-color: var(--glass-fill);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+}
+
+.cert-page .bg-slate-50 {
+  background-color: rgba(241, 245, 249, 0.68);
+}
+
+.dark .cert-page .bg-slate-50 {
+  background-color: rgba(48, 52, 68, 0.68);
+}
+
+.dark .cert-page [class~="text-slate-900"],
+.dark .cert-page [class~="text-slate-800"],
+.dark .cert-page [class~="text-gray-900"] {
+  color: #dee2f6;
+}
+
+.dark .cert-page [class~="text-slate-700"],
+.dark .cert-page [class~="text-slate-600"],
+.dark .cert-page [class~="text-slate-500"],
+.dark .cert-page [class~="text-gray-200"] {
+  color: #bdc8d1;
+}
+
+.dark .cert-page [class~="text-slate-400"] {
+  color: #aab6c1;
+}
+
+.dark .cert-page [class~="text-sky-600"] {
+  color: #7bd0ff;
+}
+
+.dark .cert-page [class~="text-emerald-500"] {
+  color: #86efac;
+}
+
+.dark .cert-page [class~="text-red-400/50"] {
+  color: #fda4af;
+}
+
+.dark .cert-page [class~="text-indigo-600"],
+.dark .cert-page [class~="text-indigo-700"],
+.dark .cert-page [class~="text-indigo-800"],
+.dark .cert-page [class~="text-indigo-900"] {
+  color: #c7c9ff;
+}
+
+.dark .cert-page [class~="text-teal-700"],
+.dark .cert-page [class~="text-teal-800"],
+.dark .cert-page [class~="text-teal-900"],
+.dark .cert-page [class~="text-emerald-600"],
+.dark .cert-page [class~="text-emerald-800"],
+.dark .cert-page [class~="text-emerald-900"] {
+  color: #9be8c0;
+}
+
+.dark .cert-page [class~="text-amber-600"],
+.dark .cert-page [class~="text-amber-700"],
+.dark .cert-page [class~="text-amber-800"] {
+  color: #f6d47b;
+}
+
+.dark .cert-page [class~="text-red-500"],
+.dark .cert-page [class~="text-red-600"],
+.dark .cert-page [class~="text-red-700"],
+.dark .cert-page [class~="text-red-800"] {
+  color: #ffaaa2;
+}
+
+.dark .cert-page [class~="bg-teal-50"] {
+  background-color: rgba(19, 78, 74, 0.48);
+}
+
+.dark .cert-page [class~="bg-teal-100"] {
+  background-color: rgba(19, 78, 74, 0.72);
+}
+
+.dark .cert-page [class~="bg-teal-200"],
+.dark .cert-page [class~="bg-indigo-200"],
+.dark .cert-page [class~="bg-indigo-300"] {
+  background-color: rgba(49, 46, 129, 0.62);
+}
+
+.dark .cert-page [class~="bg-slate-100"] {
+  background-color: rgba(48, 52, 68, 0.72);
+}
+
+.dark .cert-page [class~="bg-indigo-50"],
+.dark .cert-page [class~="bg-emerald-50"] {
+  background-color: rgba(49, 46, 129, 0.35);
+}
+
+.dark .cert-page [class~="bg-amber-50"] {
+  background-color: rgba(120, 74, 12, 0.35);
+}
+
+.dark .cert-page [class~="bg-red-50"] {
+  background-color: rgba(127, 29, 29, 0.3);
+}
+
+.dark .cert-page [class~="bg-red-100"] {
+  background-color: rgba(127, 29, 29, 0.5);
+}
+
+.dark .cert-page .border-slate-200 {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.dark .cert-page [class~="border-teal-100"],
+.dark .cert-page [class~="border-teal-200"],
+.dark .cert-page [class~="border-emerald-200"] {
+  border-color: rgba(110, 231, 183, 0.24);
+}
+
+.dark .cert-page [class~="border-indigo-200"] {
+  border-color: rgba(165, 180, 252, 0.24);
+}
+
+.dark .cert-page [class~="border-amber-200"],
+.dark .cert-page [class~="border-amber-300"] {
+  border-color: rgba(252, 211, 77, 0.28);
+}
+
+.dark .cert-page [class~="border-red-100"],
+.dark .cert-page [class~="border-red-200"],
+.dark .cert-page [class~="border-red-900"] {
+  border-color: rgba(252, 165, 165, 0.24);
+}
+
+@media (max-width: 640px) {
+  .cert-page .grid-cols-2 {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

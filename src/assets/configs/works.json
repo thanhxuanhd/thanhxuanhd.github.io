@@ -2,7 +2,7 @@
   {
     "order": 1,
     "companyName": "Nashtech",
-    "workTimes": "2021 - Present",
+    "workTimes": "2021 - <span class=\"font-label-caps text-label-caps px-2.5 py-0.5 rounded-full bg-sky-600 dark:bg-sky-500 text-white font-bold\">Present</span>",
     "role": "Senior Software Engineer"
   },
   {

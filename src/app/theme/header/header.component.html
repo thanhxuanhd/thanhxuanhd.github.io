@@ -1,7 +1,6 @@
-<div
-  class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200 dark:bg-gray-900 dark:border-gray-700">
-  <div class="w-full mx-auto px-4 sm:px-4">
-    <div class="flex justify-between items-center py-3 md:justify-start md:space-x-10">
+<div class="glass-header mobile-solid-header fixed inset-x-0 top-0 z-50">
+  <div class="mx-auto w-full max-w-7xl px-4 sm:px-6">
+    <div class="flex items-center justify-between py-3">
       <div class="flex justify-start lg:w-0 lg:flex-1">
         <a href="#">
           <span class="sr-only">Workflow</span>
@@ -10,9 +9,9 @@
           </span>
         </a>
       </div>
-      <div class="-mr-2 -my-2 md:hidden">
+      <div class="-mr-2 lg:hidden">
         <button type="button"
-          class=" rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+          class="inline-flex items-center justify-center rounded-full p-2 text-slate-600 transition hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 dark:text-on-surface-variant dark:hover:bg-white/10"
           aria-expanded="false" (click)="onToggleMenu($event)">
           <span class="sr-only">Open menu</span>
           <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
@@ -21,41 +20,49 @@
           </svg>
         </button>
       </div>
-      <nav class="hidden md:flex space-x-10">
-        <a routerLink="/home" routerLinkActive="active-link font-bold" class="transition-colors ">
-          <span>Home</span>
+      <nav
+        class="glass-nav hidden items-center gap-1 rounded-full border border-slate-200/70 p-1.5 backdrop-blur-xl dark:border-white/10 lg:flex">
+        <a routerLink="/home" routerLinkActive="active-link bg-sky-500 text-white shadow-sm shadow-sky-500/25"
+          class="rounded-full px-3 py-2 font-semibold text-slate-700 transition hover:bg-sky-500 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 dark:text-on-surface-variant dark:hover:bg-sky-500">
+          <span class="dark:text-white">Home</span>
         </a>
-        <a routerLink="/work-experiences" routerLinkActive="active-link font-bold" class="transition-colors ">
-          Work
+        <a routerLink="/work-experiences"
+          routerLinkActive="active-link bg-sky-500 text-white shadow-sm shadow-sky-500/25"
+          class="rounded-full px-3 py-2 font-semibold text-slate-700 transition hover:bg-sky-500 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 dark:text-on-surface-variant dark:hover:bg-sky-500">
+          <span class="dark:text-white">Work</span>
         </a>
-        <a routerLink="/contact" routerLinkActive="active-link font-bold" class="transition-colors ">
-          Contact
+        <a routerLink="/contact"
+          routerLinkActive="active-link bg-sky-500 text-white shadow-sm shadow-sky-500/25"
+          class="rounded-full px-3 py-2 font-semibold text-slate-700 transition hover:bg-sky-500 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 dark:text-on-surface-variant dark:hover:bg-sky-500">
+          <span class="dark:text-white">Contact</span>
         </a>
-        <a routerLink="/mongodb-cert" routerLinkActive="active-link font-bold" class="transition-colors ">
-          MongoDB Associate Developer Exam
+        <a routerLink="/mongodb-cert"
+          routerLinkActive="active-link bg-sky-500 text-white shadow-sm shadow-sky-500/25"
+          class="rounded-full px-3 py-2 font-semibold text-slate-700 transition hover:bg-sky-500 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 dark:text-on-surface-variant dark:hover:bg-sky-500">
+          <span class="dark:text-white">Certification</span>
         </a>
 
         @if (!this.isDarkTheme) {
-        <span class="text-base" (click)="switchTheme()">
+        <button type="button" aria-label="Switch to dark theme" class="rounded-full p-2 transition hover:bg-slate-100 dark:hover:bg-white/10" (click)="switchTheme()">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
             stroke="currentColor" class="w-6 h-6">
             <path stroke-linecap="round" stroke-linejoin="round"
               d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z">
             </path>
           </svg>
-        </span>
+        </button>
         }
 
         @if (this.isDarkTheme) {
-        <span class="text-base" (click)="switchTheme()">
+        <button type="button" aria-label="Switch to light theme" class="rounded-full p-2 transition hover:bg-white/10" (click)="switchTheme()">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
             stroke="currentColor" class="w-6 h-6">
             <path stroke-linecap="round" stroke-linejoin="round"
               d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
           </svg>
-        </span>
+        </button>
         }
-        <div class="h-6 w-px bg-gray-200"></div>
+        <div class="mx-1 h-6 w-px bg-slate-200 dark:bg-white/10"></div>
         <a rel="noopener" class="ml-2 font-bold" href="https://github.com/thanhxuanhd" target="_blank">
           @if (!isDarkTheme) {
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -86,10 +93,10 @@
   From: "opacity-100 scale-100"
   To: "opacity-0 scale-95"
   -->
-  <div class="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden"
+  <div class="absolute inset-x-0 top-full p-3 transition-transform origin-top md:hidden lg:hidden"
     [ngClass]="toggleMenu ? '' : 'hidden'">
-    <div class="rounded-lg shadow-lg ring-1" [ngClass]="!isDarkTheme ? 'bg-white' : 'bg-slate-800'">
-      <div class="pt-5 pb-6 px-5">
+    <div class="mobile-menu-panel mx-auto max-w-md rounded-3xl p-4">
+      <div class="px-2 py-3">
         <div class="flex items-center justify-between">
           <div>
             <span class="text-3xl font-bold tracking-tighter text-blue-500">
@@ -97,8 +104,7 @@
             </span>
           </div>
           <div class="-mr-2">
-            <button type="button" class="rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500
-              hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+            <button type="button" class="inline-flex items-center justify-center rounded-full p-2 text-slate-600 transition hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 dark:text-on-surface-variant dark:hover:bg-white/10"
               (click)="onToggleMenu($event)">
               <span class="sr-only">Close menu</span>
               <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"

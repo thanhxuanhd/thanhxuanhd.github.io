@@ -1,0 +1,30 @@
+@media (max-width: 1023px) {
+  .mobile-solid-header {
+    border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+    background: #f8fafc;
+    box-shadow: none;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+
+  .mobile-menu-panel {
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    background: #fff;
+    box-shadow: 0 16px 32px rgba(15, 23, 42, 0.16);
+  }
+}
+
+:host-context(.dark) {
+  @media (max-width: 1023px) {
+    .mobile-solid-header {
+      border-bottom-color: rgba(255, 255, 255, 0.1);
+      background: #0e1321;
+    }
+
+    .mobile-menu-panel {
+      border-color: rgba(255, 255, 255, 0.1);
+      background: #1a1f2e;
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.35);
+    }
+  }
+}
