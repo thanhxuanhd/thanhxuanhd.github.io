@@ -1,5 +1,18 @@
-{
-  "BackEnd": ["ASP.NET", "ASP.NET Core", "Web Service", "WCF"],
-  "FrontEnd": ["Angular JS", "Angular", "Blazor", "Vue", "NextJs","Bootstrap", "Tailwind CSS"],
-  "Database": ["MS SQL Server", "Mongo DB"]
-}
+[
+  {
+    "name": "Back End",
+    "children": ["ASP.NET", "ASP.NET Core", "Web Service", "WCF"]
+  },
+  {
+    "name": "Front End",
+    "children": ["Angular JS", "Angular", "Blazor", "Vue", "NextJs", "Bootstrap", "Tailwind CSS"]
+  },
+  {
+    "name": "Database",
+    "children": ["MS SQL Server", "Mongo DB"]
+  },
+  {
+    "name": "Automation Test",
+    "children": ["Playwright"]
+  }
+]

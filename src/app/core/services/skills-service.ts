@@ -8,7 +8,6 @@ import skills from '@assets/configs/skills.json';
 export class SkillsService {
   private skills: ISkills = null!;
 
-
   getSkills(): ISkills {
     if (!this.skills) {
       this.skills = skills;

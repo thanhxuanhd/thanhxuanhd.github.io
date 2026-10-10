@@ -16,11 +16,7 @@ import {
 export class WorkTimeComponent implements OnInit {
 
   works: Array<IWorkTime> = [];
-  skills: ISkills = {
-    BackEnd: [],
-    FrontEnd: [],
-    Database: []
-  };
+  skills: ISkills = [];
 
   constructor(private workTimeService: WorkTimeService,
     private skillService: SkillsService) { }
@@ -29,7 +25,7 @@ export class WorkTimeComponent implements OnInit {
     if (this.works && this.works.length === 0) {
       this.works = this.workTimeService.getWorkTimes();
     }
-    if (this.skills && this.skills?.BackEnd.length === 0) {
+    if (this.skills.length === 0) {
       this.skills = this.skillService.getSkills();
     }
   }
