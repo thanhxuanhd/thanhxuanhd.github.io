@@ -14,7 +14,7 @@
       </span>
     </div>
     <div class="relative space-y-0">
-      @for (work of works; track work; let isFirst = $first) {
+      @for (work of works; track work.order; let isFirst = $first) {
       <div class="relative pl-8 pb-10 border-l-2 last:pb-0 last:border-l-0">
         <div class="absolute -left-[9px] top-1 h-4 w-4 rounded-full border-2 bg-white dark:bg-surface-container"
           [ngClass]="isFirst ? 'border-sky-600 dark:border-primary transition-all duration-300': 'border-slate-300 dark:border-white/20'">

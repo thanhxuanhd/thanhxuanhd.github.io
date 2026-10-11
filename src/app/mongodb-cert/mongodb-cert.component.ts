@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, AfterViewInit, ViewChild, Inject, PLATFORM_ID, signal, OnDestroy } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, Inject, OnDestroy, PLATFORM_ID, signal, ViewChild } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { Chart, registerables } from 'chart.js';
 
@@ -18,9 +18,10 @@ function wrapLabel(label: string): string | string[] {
   selector: 'app-mongodb-cert',
   templateUrl: './mongodb-cert.component.html',
   styleUrl: './mongodb-cert.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: false
 })
-export class MongodbCertComponent implements OnInit, AfterViewInit, OnDestroy {
+export class MongodbCertComponent implements AfterViewInit, OnDestroy {
   @ViewChild('weightChart') weightChart!: ElementRef<HTMLCanvasElement>;
   @ViewChild('indexChart') indexChart!: ElementRef<HTMLCanvasElement>;
 
@@ -54,9 +55,6 @@ export class MongodbCertComponent implements OnInit, AfterViewInit, OnDestroy {
   };
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) { }
-
-  ngOnInit(): void {
-  }
 
   ngAfterViewInit(): void {
     if (isPlatformBrowser(this.platformId)) {

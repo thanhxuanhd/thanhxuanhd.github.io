@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ThemeModule } from './theme';
-import {NgOptimizedImage} from "@angular/common";
 import {RouterModule} from "@angular/router";
 
 @NgModule({
@@ -15,7 +14,6 @@ import {RouterModule} from "@angular/router";
     BrowserModule,
     AppRoutingModule,
     ThemeModule,
-    NgOptimizedImage,
     RouterModule
   ],
   providers: [],

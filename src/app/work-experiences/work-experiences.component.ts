@@ -8,7 +8,7 @@ import {
     selector: 'app-work-experiences',
     templateUrl: './work-experiences.component.html',
     styleUrls: ['./work-experiences.component.scss'],
-    changeDetection: ChangeDetectionStrategy.Eager,
+    changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: false
 })
 export class WorkExperiencesComponent implements OnInit {

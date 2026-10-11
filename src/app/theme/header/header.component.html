@@ -12,8 +12,8 @@
       <div class="-mr-2 lg:hidden">
         <button type="button"
           class="inline-flex items-center justify-center rounded-full p-2 text-slate-600 transition hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 dark:text-on-surface-variant dark:hover:bg-white/10"
-          aria-expanded="false" (click)="onToggleMenu($event)">
-          <span class="sr-only">Open menu</span>
+          [attr.aria-expanded]="toggleMenu" aria-controls="mobile-menu" (click)="onToggleMenu()">
+          <span class="sr-only">{{ toggleMenu ? 'Close menu' : 'Open menu' }}</span>
           <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
             aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -95,7 +95,7 @@
   -->
   <div class="absolute inset-x-0 top-full p-3 transition-transform origin-top md:hidden lg:hidden"
     [ngClass]="toggleMenu ? '' : 'hidden'">
-    <div class="mobile-menu-panel mx-auto max-w-md rounded-3xl p-4">
+    <div id="mobile-menu" class="mobile-menu-panel mx-auto max-w-md rounded-3xl p-4">
       <div class="px-2 py-3">
         <div class="flex items-center justify-between">
           <div>
@@ -105,7 +105,7 @@
           </div>
           <div class="-mr-2">
             <button type="button" class="inline-flex items-center justify-center rounded-full p-2 text-slate-600 transition hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 dark:text-on-surface-variant dark:hover:bg-white/10"
-              (click)="onToggleMenu($event)">
+              (click)="onToggleMenu()">
               <span class="sr-only">Close menu</span>
               <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor" aria-hidden="true">

@@ -1,19 +1,12 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
     selector: 'app-footer',
     templateUrl: './footer.component.html',
     styleUrls: ['./footer.component.scss'],
-    changeDetection: ChangeDetectionStrategy.Eager,
+    changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: false
 })
-export class FooterComponent implements OnInit {
-
-  year: Date = undefined!;
-  constructor() { }
-
-  ngOnInit(): void {
-    this.year = new Date();
-  }
-
+export class FooterComponent {
+  year = new Date();
 }

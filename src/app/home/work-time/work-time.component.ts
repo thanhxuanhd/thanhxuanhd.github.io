@@ -10,7 +10,7 @@ import {
     selector: 'app-work-time',
     templateUrl: './work-time.component.html',
     styleUrls: ['./work-time.component.scss'],
-    changeDetection: ChangeDetectionStrategy.Eager,
+    changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: false
 })
 export class WorkTimeComponent implements OnInit {
